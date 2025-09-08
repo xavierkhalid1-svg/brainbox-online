@@ -1,4 +1,4 @@
-import "../styles/globals.css"; // if build errors, change to "./globals.css"
+import "../styles/globals.css";
 import Image from "next/image";
 import Link from "next/link";
 
