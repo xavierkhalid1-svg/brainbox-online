@@ -13,8 +13,19 @@ export default function Page() {
         </p>
 
         <div className="flex items-center justify-center gap-4 pt-2">
+          {/* Solid primary button (uses theme green) */}
           <a href="/dashboard" className="btn btn-lg">Get started</a>
-          <a href="/teacher" className="btn btn-lg" style={{ background: "transparent", border: "1px solid #2bdcd2" }}>
+
+          {/* Outline button in your green (no extra CSS needed) */}
+          <a
+            href="/teacher"
+            className="btn btn-lg"
+            style={{
+              background: "transparent",
+              border: "1px solid #22c55e",
+              color: "#22c55e"
+            }}
+          >
             Meet the teacher
           </a>
         </div>
