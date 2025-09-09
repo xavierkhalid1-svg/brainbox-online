@@ -1,61 +1,75 @@
 export const metadata = {
   title: "Contact — Brain Box Online",
-  description: "Get in touch with Brain Box Online.",
+  description:
+    "Questions about enrolment, timetables, or pricing? Send us a message and we’ll get back to you.",
 };
 
-export default function ContactPage() {
+export default function Page() {
   return (
-    <div className="space-y-6">
+    <div className="space-y-8">
       <h1>Contact</h1>
-      <p className="text-neutral-300">
-        Questions about enrolment, timetables, or pricing? Send us a message and we’ll get back to you.
+      <p>
+        Questions about enrolment, timetables, or pricing? Send us a message and
+        we’ll get back to you.
       </p>
 
-      {/* Netlify Forms: static-friendly, no JS required */}
       <form
         name="contact"
         method="POST"
         action="/contact/success"
         data-netlify="true"
-        data-netlify-honeypot="bot-field"
-        className="max-w-xl space-y-4"
+        netlify-honeypot="bot-field"
+        className="space-y-4 max-w-xl"
       >
-        {/* Required hidden input for Netlify */}
+        {/* Netlify needs these */}
         <input type="hidden" name="form-name" value="contact" />
-        {/* Honeypot */}
         <p className="hidden">
           <label>
             Don’t fill this out: <input name="bot-field" />
           </label>
         </p>
 
-        <div className="grid gap-4 sm:grid-cols-2">
-          <div>
-            <label className="block mb-1 text-sm">First name</label>
-            <input name="firstName" className="input w-full" required />
-          </div>
-          <div>
-            <label className="block mb-1 text-sm">Last name</label>
-            <input name="lastName" className="input w-full" required />
-          </div>
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <label className="block">
+            <span className="block mb-1">First name</span>
+            <input
+              className="input w-full"
+              type="text"
+              name="firstName"
+              required
+            />
+          </label>
+
+          <label className="block">
+            <span className="block mb-1">Last name</span>
+            <input
+              className="input w-full"
+              type="text"
+              name="lastName"
+              required
+            />
+          </label>
         </div>
 
-        <div>
-          <label className="block mb-1 text-sm">Email</label>
-          <input type="email" name="email" className="input w-full" required />
-        </div>
+        <label className="block">
+          <span className="block mb-1">Email</span>
+          <input className="input w-full" type="email" name="email" required />
+        </label>
 
-        <div>
-          <label className="block mb-1 text-sm">Message</label>
-          <textarea name="message" rows={6} className="input w-full" required />
-        </div>
+        <label className="block">
+          <span className="block mb-1">Message</span>
+          <textarea
+            className="input w-full"
+            name="message"
+            rows={6}
+            required
+          />
+        </label>
 
-        <button className="btn btn-lg" type="submit">Send message</button>
+        <button className="btn btn-lg" type="submit">
+          Send message
+        </button>
       </form>
-
-      <p className="text-xs text-neutral-400">
-        This form is powered by Netlify Forms. Submissions will show up in your Netlify dashboard.
-      </p>
     </div>
   );
 }
